@@ -1,0 +1,211 @@
+body main .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  max-height: 75vh;
+  background-color: hsl(0, 0%, 100%);
+  padding: 20px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (min-width: 481px) {
+  body main .modal {
+    width: 400px;
+  }
+}
+
+@media (min-width: 769px) {
+  body main .modal {
+    width: 450px;
+  }
+}
+
+body main .modal::-webkit-scrollbar {
+  display: none;
+}
+
+body main .modal.open {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+body main .modal .modal-content {
+  background-color: hsl(0, 0%, 100%);
+  text-align: left;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+body main .modal .modal-content img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+body main .modal .modal-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+body main .modal .modal-content #subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: hsl(12, 20%, 44%);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+body main .modal .modal-content .order-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: hsl(20, 50%, 98%);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+}
+
+body main .modal .modal-content .order-list .order-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid hsl(13, 31%, 94%);
+  height: 100%;
+  width: 100%;
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.25rem;
+  margin: auto;
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  margin-left: 0.75rem;
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-details .order-item-left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-details .order-item-left .order-item-name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-details .order-item-left .order-tally-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-details .order-item-left .order-tally-price .order-item-quantity {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: hsl(14, 86%, 42%);
+  margin-right: 0.5rem;
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-details .order-item-left .order-tally-price .order-item-price {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: hsl(7, 20%, 60%);
+}
+
+body main .modal .modal-content .order-list .order-item .order-item-details .order-item-right .order-item-total {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+body main .modal .modal-content .order-list .modal-total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+body main .modal .modal-content .order-list .modal-total-price .total-text {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: hsl(14, 65%, 9%);
+}
+
+body main .modal .modal-content .order-list .modal-total-price .total-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+body main .modal .modal-content .close-modal {
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  height: 100%;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+body main .modal .modal-content .close-modal:hover {
+  background-color: #982c0b;
+}
+
+body main .overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+body main .overlay::-webkit-scrollbar {
+  display: none;
+}
+
+body main .overlay.open {
+  display: block;
+}

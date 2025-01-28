@@ -1,0 +1,62 @@
+/* 
+  App.css 
+  Contains main layout styles and some reused classes. 
+*/
+body {
+  width: 100vw;
+  padding: 2rem;
+}
+
+@media (min-width: 769px) {
+  body {
+    padding: 4rem;
+  }
+}
+body main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (min-width: 961px) {
+  body main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+
+body main .main-container {
+  padding-right: 2rem;
+}
+
+body main .main-container .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 961px) {
+  body main .main-container .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(14, 65%, 9%);
+    margin-bottom: 1rem;
+  }
+}
+body footer {
+  margin-top: 1rem;
+  padding: 2rem 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+body footer .attribution {
+  margin-bottom: 1rem;
+}

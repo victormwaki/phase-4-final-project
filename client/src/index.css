@@ -1,7 +1,77 @@
-:root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
-  --text: hsla(0, 0%, 100%, 0.88);
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;600;700&display=swap");
+
+html,
+body {
+  height: 100%;
+  font-family: 'Red Hat Text', sans-serif;
+  background-color: hsl(20, 50%, 98%);
+  color: hsl(14, 65%, 9%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: underline;
+  color: hsl(12, 20%, 44%);
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  color: hsl(14, 25%, 72%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}

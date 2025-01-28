@@ -1,0 +1,158 @@
+body main .main-container .desserts-container .dessert-card {
+  text-align: start;
+}
+
+body main .main-container .desserts-container .dessert-card img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 961px) {
+  body main .main-container .desserts-container .dessert-card img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}
+
+body main .main-container .desserts-container .dessert-card .increment-decrement-buttons {
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  position: relative;
+  top: -1.35rem;
+  width: 65%;
+  margin: 0 auto;
+}
+
+@media (min-width: 961px) {
+  body main .main-container .desserts-container .dessert-card .increment-decrement-buttons {
+    top: -1.15rem;
+  }
+}
+
+body main .main-container .desserts-container .dessert-card .increment-decrement-buttons .decrement-button,
+body main .main-container .desserts-container .dessert-card .increment-decrement-buttons .increment-button {
+  border: 1px solid hsl(20, 50%, 98%);
+  padding: 5px;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: hsl(20, 50%, 98%);
+  cursor: pointer;
+  transition: color 0.3s, border 0.3s;
+}
+body main .main-container .desserts-container .dessert-card .increment-decrement-buttons .cart-item-quantity {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: hsl(20, 50%, 98%);
+}
+
+body main .main-container .desserts-container .dessert-card .add-to-cart-button {
+  background-color: hsl(13, 31%, 94%);
+  color: hsl(14, 65%, 9%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 2px solid hsl(14, 25%, 72%);
+  position: relative;
+  top: -1.35rem;
+  width: 65%;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 961px) {
+  body main .main-container .desserts-container .dessert-card .add-to-cart-button {
+    font-size: 16px;
+    top: -1.15rem;
+  }
+}
+
+body main .main-container .desserts-container .dessert-card .add-to-cart-button img {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 961px) {
+  body main .main-container .desserts-container .dessert-card .add-to-cart-button img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+}
+
+body main .main-container .desserts-container .dessert-card .add-to-cart-button:hover {
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  border: 2px solid hsl(14, 86%, 42%);
+}
+
+body main .main-container .desserts-container .dessert-card .dessert-card-details {
+  padding: 0 0 1rem;
+}
+
+body main .main-container .desserts-container .dessert-card .dessert-card-details .dessert-category {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: hsl(7, 20%, 60%);
+}
+
+@media (min-width: 961px) {
+  body main .main-container .desserts-container .dessert-card .dessert-card-details .dessert-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: hsl(7, 20%, 60%);
+  }
+}
+
+body main .main-container .desserts-container .dessert-card .dessert-card-details .dessert-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+}
+
+@media (min-width: 961px) {
+  body main .main-container .desserts-container .dessert-card .dessert-card-details .dessert-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: hsl(14, 65%, 9%);
+  }
+}
+
+body main .main-container .desserts-container .dessert-card .dessert-card-details .dessert-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: hsl(14, 86%, 42%);
+}
+
+@media (min-width: 961px) {
+  body main .main-container .desserts-container .dessert-card .dessert-card-details .dessert-price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: hsl(14, 86%, 42%);
+  }
+}
