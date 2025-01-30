@@ -11,7 +11,9 @@ import '../../styles/DessertCard.css';
  */
 export default function DessertCard({ dessert }) {
   const { cart, addItem, removeOneItem } = useCart();
-  const responsiveImage = useResponsiveImage(dessert.image);
+
+  // Always call the useResponsiveImage hook
+  const responsiveImage = useResponsiveImage(dessert.image || {}); // Default to an empty object if image is missing
 
   // Check if this dessert is currently in the cart
   const cartItem = cart.find(item => item.name === dessert.name);
@@ -19,14 +21,18 @@ export default function DessertCard({ dessert }) {
   return (
     <div className="dessert-card" id={dessert.name.replace(/\s+/g, '-')}>
       {/* Dessert image */}
-      <img
-        className="dessert-image"
-        src={responsiveImage}
-        alt={dessert.name}
-        style={{
-          border: cartItem ? '2px solid hsl(14, 86%, 42%)' : 'none'
-        }}
-      />
+      {dessert.image ? (
+        <img
+          className="dessert-image"
+          src={responsiveImage}
+          alt={dessert.name}
+          style={{
+            border: cartItem ? '2px solid hsl(14, 86%, 42%)' : 'none'
+          }}
+        />
+      ) : (
+        <div className="dessert-image-placeholder">Image not available</div>
+      )}
 
       {/* Conditional rendering of buttons */}
       {cartItem ? (
@@ -42,7 +48,7 @@ export default function DessertCard({ dessert }) {
             }}
           >
             <img
-              src="/assets/images/icon-decrement-quantity.svg"
+              src="/static/images/icon-decrement-quantity.svg"
               alt="Decrement quantity icon"
             />
           </button>
@@ -60,7 +66,7 @@ export default function DessertCard({ dessert }) {
             }}
           >
             <img
-              src="/assets/images/icon-increment-quantity.svg"
+              src="/static/images/icon-increment-quantity.svg"
               alt="Increment quantity icon"
             />
           </button>
@@ -69,13 +75,13 @@ export default function DessertCard({ dessert }) {
         <button className="add-to-cart-button" onClick={() => addItem(dessert)}>
           <img
             className="add-to-cart-icon"
-            src="/assets/images/icon-add-to-cart.svg"
+            src="/static/images/icon-add-to-cart.svg"
             alt="Add to cart icon"
             onMouseOver={e => {
-              e.currentTarget.src = '/assets/images/icon-add-to-cart-light.svg';
+              e.currentTarget.src = '/static/images/icon-add-to-cart-light.svg';
             }}
             onMouseOut={e => {
-              e.currentTarget.src = '/assets/images/icon-add-to-cart.svg';
+              e.currentTarget.src = '/static/images/icon-add-to-cart.svg';
             }}
           />
           Add to cart

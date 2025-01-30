@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useResponsiveImage from '../../hooks/useResponsiveImage';
-import { dessertsData } from '../../data/desserts';
+import { getAllDesserts } from '../../data/desserts';
 
 /**
- * A subcomponent for rendering an individual order item in the checkout modal.
- * @param {Object} props
- * @param {Object} props.item - The cart item (name, quantity, price).
+ * Renders a single order item in the checkout modal
+ * by fetching the matching dessert data from the server.
  */
 export default function OrderItem({ item }) {
-  // 1) Retrieve the dessert data from your dessert list
-  const dessertData = dessertsData.find(d => d.name === item.name);
+  const [dessertData, setDessertData] = useState(null);
 
-  // 2) Call the Hook at the top level of this component
-  const responsiveSrc = useResponsiveImage(dessertData.image);
+  useEffect(() => {
+    getAllDesserts()
+      .then(desserts => {
+        const found = desserts.find(d => d.name === item.name);
+        setDessertData(found || null);
+      })
+      .catch(err => console.error('Error fetching desserts:', err));
+  }, [item.name]);
 
-  // 3) Return the JSX for one "order item" row
+  // Provide a fallback if dessertData is null
+  // so our hook is called unconditionally:
+  const defaultImage = {
+    thumbnail: '',
+    mobile: '',
+    tablet: '',
+    desktop: '',
+  };
+
+  const imageObj = dessertData?.image || defaultImage;
+  const responsiveSrc = useResponsiveImage(imageObj);
+
+  if (!dessertData) {
+    // We have already called our hook, so there's no conditional call
+    return <div>Loading dessert info...</div>;
+  }
+
   return (
     <div className="order-item">
       <img
