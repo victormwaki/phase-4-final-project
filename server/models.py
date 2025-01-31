@@ -46,7 +46,6 @@ class Order(db.Model, SerializerMixin):
             'desserts': [dessert.to_dict() for dessert in self.desserts]  # Include desserts
         }
 
-
 class Dessert(db.Model, SerializerMixin):
     __tablename__ = 'desserts'
 

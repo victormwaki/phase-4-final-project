@@ -12,8 +12,17 @@ import '../../styles/DessertCard.css';
 export default function DessertCard({ dessert }) {
   const { cart, addItem, removeOneItem } = useCart();
 
+   let imageObject = {};
+  if (typeof dessert.image === 'string') {
+    // Replace single quotes with double quotes, then parse
+    imageObject = JSON.parse(dessert.image.replace(/'/g, '"'));
+  } else {
+    // It's already an object or undefined
+    imageObject = dessert.image || {};
+  }
+
   // Always call the useResponsiveImage hook
-  const responsiveImage = useResponsiveImage(dessert.image || {}); // Default to an empty object if image is missing
+  const responsiveImage = useResponsiveImage(imageObject);
 
   // Check if this dessert is currently in the cart
   const cartItem = cart.find(item => item.name === dessert.name);

@@ -24,9 +24,7 @@ export default function DessertList() {
   return (
     <div className="desserts-container">
       {desserts.map((dessert) => (
-        <Link to={`/desserts/${dessert.id}`} key={dessert.id}>
-          <DessertCard dessert={dessert} />
-        </Link>
+          <DessertCard key={dessert.id} dessert={dessert} />
       ))}
     </div>
   );
